@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+@import './normalizer.css';
+
+@font-face {
+  font-family: 'Italian Plate No2 Expanded';
+  src: url('https://db.onlinewebfonts.com/t/bac2610117740a492b7a9f5079c9aca4.eot');
+  src:
+    url('https://db.onlinewebfonts.com/t/bac2610117740a492b7a9f5079c9aca4.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://db.onlinewebfonts.com/t/bac2610117740a492b7a9f5079c9aca4.woff2')
+      format('woff2'),
+    url('https://db.onlinewebfonts.com/t/bac2610117740a492b7a9f5079c9aca4.woff')
+      format('woff'),
+    url('https://db.onlinewebfonts.com/t/bac2610117740a492b7a9f5079c9aca4.ttf')
+      format('truetype'),
+    url('https://db.onlinewebfonts.com/t/bac2610117740a492b7a9f5079c9aca4.svg#Italian Plate No2 Expanded')
+      format('svg');
+}
+
+:root {
+  --font-family: 'Italian Plate No2 Expanded', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+
+.max-w-100{
+    max-width: calc(var(--spacing) * 100)
+}
+
+.font-xs{
+    font-size: 10px;
+}
+
+.card-size{
+    width: 112px;
+    height: 198px;
+
+
+}
