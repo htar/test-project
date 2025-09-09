@@ -6,7 +6,7 @@ interface IBackgroundPreview {
   avatarImage: string | null
   isDefault?: boolean
   onClick: () => void
-  duration: number
+  duration?: number
 }
 
 export const BackgroundPreview: FC<IBackgroundPreview> = ({
