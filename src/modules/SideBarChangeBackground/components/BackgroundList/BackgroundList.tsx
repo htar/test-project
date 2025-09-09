@@ -9,16 +9,25 @@ export const BackgroundList = () => {
 
   return (
     <div className="grid grid-cols-3 gap-4 ">
-      {isBackgrounds &&
-        backgrounds.map((bg: string) => (
+      {isBackgrounds && (
+        <>
           <BackgroundPreview
-            key={bg}
-            img={bg}
-            avatarImage={avatarImage}
-            isDefault={selectedBg === bg}
-            onClick={() => dispatch(setDefaultBg(bg))}
+            duration={60}
+            img=""
+            avatarImage=""
+            onClick={() => {}}
           />
-        ))}
+          {backgrounds.map((bg: string) => (
+            <BackgroundPreview
+              key={bg}
+              img={bg}
+              avatarImage={avatarImage}
+              isDefault={selectedBg === bg}
+              onClick={() => dispatch(setDefaultBg(bg))}
+            />
+          ))}
+        </>
+      )}
     </div>
   )
 }

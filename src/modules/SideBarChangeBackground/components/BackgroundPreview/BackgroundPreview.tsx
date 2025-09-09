@@ -1,3 +1,4 @@
+import { ProgressCard } from '../ProgressCard'
 import type { FC } from 'react'
 
 interface IBackgroundPreview {
@@ -5,6 +6,7 @@ interface IBackgroundPreview {
   avatarImage: string | null
   isDefault?: boolean
   onClick: () => void
+  duration: number
 }
 
 export const BackgroundPreview: FC<IBackgroundPreview> = ({
@@ -12,11 +14,12 @@ export const BackgroundPreview: FC<IBackgroundPreview> = ({
   isDefault,
   onClick,
   avatarImage,
+  duration,
 }) => {
   return (
     <div
       onClick={onClick}
-      className={` rounded-xl relative rounded-lg overflow-hidden cursor-pointer border 
+      className={` rounded-xl relative overflow-hidden cursor-pointer border 
       ${isDefault ? 'border-primary' : 'border-transparent'}`}
       style={{
         backgroundImage: `url("${img}")`,
@@ -27,11 +30,15 @@ export const BackgroundPreview: FC<IBackgroundPreview> = ({
         height: '197px',
       }}
     >
-      <img
-        src={avatarImage || ''}
-        alt="background preview"
-        className="w-full h-full object-cover"
-      />
+      {duration ? (
+        <ProgressCard duration={duration} />
+      ) : (
+        <img
+          src={avatarImage || ''}
+          alt="background preview"
+          className="w-full h-full object-cover"
+        />
+      )}
 
       {isDefault && (
         <span className=" text-black bg-white color-black p-1 font-xs font-bold absolute top-1 left-1 text-xs  px-1 rounded">
